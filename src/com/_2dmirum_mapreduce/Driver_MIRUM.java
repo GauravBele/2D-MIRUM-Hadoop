@@ -17,6 +17,10 @@ public class Driver_MIRUM extends Configured implements Tool{
 	public int run(String[] arg) throws Exception {
 		Job job = new Job(getConf());
 		job.setJarByClass(getClass());
+		
+//		FileInputFormat.setInputPaths(job, new Path("/home/akshay/Desktop/vectorDump.txt")); 
+//		FileOutputFormat.setOutputPath(job, new Path("/home/akshay/Desktop/vectorDumpOutput"));
+		
 		FileInputFormat.setInputPaths(job, new Path(arg[0])); 
 		FileOutputFormat.setOutputPath(job, new Path(arg[1]));
 		
